@@ -1,10 +1,11 @@
 
 {{#if posts.length}}
 <section>
-    <h2>Your Posts</h2>
-    {{#each posts as |posts|}}
-        {{> dashboard-postinfo post}}
+  <h2>Your Posts</h2>
+    {{#each posts as |post|}}
+      {{> dashboard-postinfo post}}
     {{/each}}
+
 </section>
 {{/if}}
 
