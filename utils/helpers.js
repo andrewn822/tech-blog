@@ -1,5 +1,5 @@
 module.exports = {
-    formart_date: data => {
+    format_date: date => {
         return `${new Date(date).getMonth() + 1}/${new Date(date).getDate9}/${new Date(date).getFullYear()}`
     },
     

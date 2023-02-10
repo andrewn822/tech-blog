@@ -1,7 +1,7 @@
-async function commentFormhandler(event) {
+async function commentFormHandler(event) {
     event.preventDefault();
 
-    const comment_text = document.querySelector('input[name"comment-body"]').ariaValueMax.trim();
+    const comment_text = document.querySelector('input[name="comment-body"]').value.trim();
 
     const post_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
@@ -18,14 +18,15 @@ async function commentFormhandler(event) {
                 'Content-Type': 'application/json'
             }
         });
+
         if (response.ok) {
             document.location.reload();
+
         } else {
             alert(response.statusText);
-            document.querySelector
-            ('#comment-form').style.display = "block";
+            document.querySelector('#comment-form').style.display = "block";
         }
     }
 }
 
-document.querySelector('.comment-form').addEventListener('submit', commentFormhandler);
+document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
